@@ -97,6 +97,7 @@ ordinalType           locals [ Typespec_P2 typespec = null ]
 structuredType        locals [ Typespec_P2 typespec = null ]
     : arrayType 
     | recordType
+    | setType
     ;
 
 enumeratedType        locals [ Typespec_P2 typespec = null ] 
@@ -114,6 +115,12 @@ elmtType      : typeSpecification;
 
 recordType : /* empty */ ;
 
+setType     locals [ Typespec_P2 typespec = null ]
+    : SET OF setElementType
+    ;
+
+setElementType : typeIdentifier | ordinalType ;
+
 variablesPart            : VAR variableDeclarationsList ;
 variableDeclarationsList : variableDeclarations 
                                         ( ';' variableDeclarations )* ;
@@ -130,6 +137,7 @@ PACKED    : P A C K E D ;
 ARRAY     : A R R A Y ;
 OF        : O F ;
 RECORD    : R E C O R D ;
+SET       : S E T ;
 VAR       : V A R ;
 BEGIN     : B E G I N ;
 END       : E N D ;

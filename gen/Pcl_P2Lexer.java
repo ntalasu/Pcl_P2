@@ -1,4 +1,4 @@
-// Generated from Pcl_P2.g4 by ANTLR 4.13.2
+// Generated from /Users/talasu/Downloads/Pcl_P2/Pcl_P2.g4 by ANTLR 4.13.2
 
     package intermediate.antlr4;
     
@@ -24,8 +24,8 @@ public class Pcl_P2Lexer extends Lexer {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, PROGRAM=13, CONST=14, TYPE=15, PACKED=16, 
-		ARRAY=17, OF=18, RECORD=19, SET=20, VAR=21, BEGIN=22, END=23, TRUE=24, 
-		FALSE=25, IDENTIFIER=26, INTEGER=27, REAL=28, LETTER=29, DIGIT=30, DIGITS=31, 
+		ARRAY=17, OF=18, RECORD=19, VAR=20, BEGIN=21, END=22, TRUE=23, FALSE=24, 
+		SET=25, IDENTIFIER=26, INTEGER=27, REAL=28, LETTER=29, DIGIT=30, DIGITS=31, 
 		CHARACTER=32, STRING=33, WHITESPACE=34, COMMENT=35;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
@@ -39,7 +39,7 @@ public class Pcl_P2Lexer extends Lexer {
 		return new String[] {
 			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
 			"T__9", "T__10", "T__11", "PROGRAM", "CONST", "TYPE", "PACKED", "ARRAY", 
-			"OF", "RECORD", "SET", "VAR", "BEGIN", "END", "TRUE", "FALSE", "IDENTIFIER", 
+			"OF", "RECORD", "VAR", "BEGIN", "END", "TRUE", "FALSE", "SET", "IDENTIFIER", 
 			"INTEGER", "REAL", "LETTER", "DIGIT", "DIGITS", "CHARACTER", "STRING", 
 			"WHITESPACE", "COMMENT", "A", "B", "C", "D", "E", "F", "G", "H", "I", 
 			"J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", 
@@ -59,7 +59,7 @@ public class Pcl_P2Lexer extends Lexer {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, "PROGRAM", "CONST", "TYPE", "PACKED", "ARRAY", "OF", "RECORD", 
-			"SET", "VAR", "BEGIN", "END", "TRUE", "FALSE", "IDENTIFIER", "INTEGER", 
+			"VAR", "BEGIN", "END", "TRUE", "FALSE", "SET", "IDENTIFIER", "INTEGER", 
 			"REAL", "LETTER", "DIGIT", "DIGITS", "CHARACTER", "STRING", "WHITESPACE", 
 			"COMMENT"
 		};
@@ -151,10 +151,10 @@ public class Pcl_P2Lexer extends Lexer {
 		"\u0010\u0001\u0010\u0001\u0010\u0001\u0010\u0001\u0011\u0001\u0011\u0001"+
 		"\u0011\u0001\u0012\u0001\u0012\u0001\u0012\u0001\u0012\u0001\u0012\u0001"+
 		"\u0012\u0001\u0012\u0001\u0013\u0001\u0013\u0001\u0013\u0001\u0013\u0001"+
-		"\u0014\u0001\u0014\u0001\u0014\u0001\u0014\u0001\u0015\u0001\u0015\u0001"+
+		"\u0014\u0001\u0014\u0001\u0014\u0001\u0014\u0001\u0014\u0001\u0014\u0001"+
 		"\u0015\u0001\u0015\u0001\u0015\u0001\u0015\u0001\u0016\u0001\u0016\u0001"+
-		"\u0016\u0001\u0016\u0001\u0017\u0001\u0017\u0001\u0017\u0001\u0017\u0001"+
-		"\u0017\u0001\u0018\u0001\u0018\u0001\u0018\u0001\u0018\u0001\u0018\u0001"+
+		"\u0016\u0001\u0016\u0001\u0016\u0001\u0017\u0001\u0017\u0001\u0017\u0001"+
+		"\u0017\u0001\u0017\u0001\u0017\u0001\u0018\u0001\u0018\u0001\u0018\u0001"+
 		"\u0018\u0001\u0019\u0001\u0019\u0001\u0019\u0005\u0019\u00e7\b\u0019\n"+
 		"\u0019\f\u0019\u00ea\t\u0019\u0001\u001a\u0001\u001a\u0001\u001b\u0001"+
 		"\u001b\u0001\u001b\u0001\u001b\u0001\u001b\u0001\u001b\u0001\u001b\u0003"+
@@ -212,8 +212,8 @@ public class Pcl_P2Lexer extends Lexer {
 		"\u0000\u0000\u0000\u001d\u00aa\u0001\u0000\u0000\u0000\u001f\u00af\u0001"+
 		"\u0000\u0000\u0000!\u00b6\u0001\u0000\u0000\u0000#\u00bc\u0001\u0000\u0000"+
 		"\u0000%\u00bf\u0001\u0000\u0000\u0000\'\u00c6\u0001\u0000\u0000\u0000"+
-		")\u00ca\u0001\u0000\u0000\u0000+\u00ce\u0001\u0000\u0000\u0000-\u00d4"+
-		"\u0001\u0000\u0000\u0000/\u00d8\u0001\u0000\u0000\u00001\u00dd\u0001\u0000"+
+		")\u00ca\u0001\u0000\u0000\u0000+\u00d0\u0001\u0000\u0000\u0000-\u00d4"+
+		"\u0001\u0000\u0000\u0000/\u00d9\u0001\u0000\u0000\u00001\u00df\u0001\u0000"+
 		"\u0000\u00003\u00e3\u0001\u0000\u0000\u00005\u00eb\u0001\u0000\u0000\u0000"+
 		"7\u0101\u0001\u0000\u0000\u00009\u0103\u0001\u0000\u0000\u0000;\u0105"+
 		"\u0001\u0000\u0000\u0000=\u0108\u0001\u0000\u0000\u0000?\u010c\u0001\u0000"+
@@ -259,17 +259,17 @@ public class Pcl_P2Lexer extends Lexer {
 		"\u0000\u0000\u0000\u00bf\u00c0\u0003i4\u0000\u00c0\u00c1\u0003O\'\u0000"+
 		"\u00c1\u00c2\u0003K%\u0000\u00c2\u00c3\u0003c1\u0000\u00c3\u00c4\u0003"+
 		"i4\u0000\u00c4\u00c5\u0003M&\u0000\u00c5&\u0001\u0000\u0000\u0000\u00c6"+
-		"\u00c7\u0003k5\u0000\u00c7\u00c8\u0003O\'\u0000\u00c8\u00c9\u0003m6\u0000"+
-		"\u00c9(\u0001\u0000\u0000\u0000\u00ca\u00cb\u0003q8\u0000\u00cb\u00cc"+
-		"\u0003G#\u0000\u00cc\u00cd\u0003i4\u0000\u00cd*\u0001\u0000\u0000\u0000"+
-		"\u00ce\u00cf\u0003I$\u0000\u00cf\u00d0\u0003O\'\u0000\u00d0\u00d1\u0003"+
-		"S)\u0000\u00d1\u00d2\u0003W+\u0000\u00d2\u00d3\u0003a0\u0000\u00d3,\u0001"+
-		"\u0000\u0000\u0000\u00d4\u00d5\u0003O\'\u0000\u00d5\u00d6\u0003a0\u0000"+
-		"\u00d6\u00d7\u0003M&\u0000\u00d7.\u0001\u0000\u0000\u0000\u00d8\u00d9"+
-		"\u0003m6\u0000\u00d9\u00da\u0003i4\u0000\u00da\u00db\u0003o7\u0000\u00db"+
-		"\u00dc\u0003O\'\u0000\u00dc0\u0001\u0000\u0000\u0000\u00dd\u00de\u0003"+
-		"Q(\u0000\u00de\u00df\u0003G#\u0000\u00df\u00e0\u0003].\u0000\u00e0\u00e1"+
-		"\u0003k5\u0000\u00e1\u00e2\u0003O\'\u0000\u00e22\u0001\u0000\u0000\u0000"+
+		"\u00c7\u0003q8\u0000\u00c7\u00c8\u0003G#\u0000\u00c8\u00c9\u0003i4\u0000"+
+		"\u00c9(\u0001\u0000\u0000\u0000\u00ca\u00cb\u0003I$\u0000\u00cb\u00cc"+
+		"\u0003O\'\u0000\u00cc\u00cd\u0003S)\u0000\u00cd\u00ce\u0003W+\u0000\u00ce"+
+		"\u00cf\u0003a0\u0000\u00cf*\u0001\u0000\u0000\u0000\u00d0\u00d1\u0003"+
+		"O\'\u0000\u00d1\u00d2\u0003a0\u0000\u00d2\u00d3\u0003M&\u0000\u00d3,\u0001"+
+		"\u0000\u0000\u0000\u00d4\u00d5\u0003m6\u0000\u00d5\u00d6\u0003i4\u0000"+
+		"\u00d6\u00d7\u0003o7\u0000\u00d7\u00d8\u0003O\'\u0000\u00d8.\u0001\u0000"+
+		"\u0000\u0000\u00d9\u00da\u0003Q(\u0000\u00da\u00db\u0003G#\u0000\u00db"+
+		"\u00dc\u0003].\u0000\u00dc\u00dd\u0003k5\u0000\u00dd\u00de\u0003O\'\u0000"+
+		"\u00de0\u0001\u0000\u0000\u0000\u00df\u00e0\u0003k5\u0000\u00e0\u00e1"+
+		"\u0003O\'\u0000\u00e1\u00e2\u0003m6\u0000\u00e22\u0001\u0000\u0000\u0000"+
 		"\u00e3\u00e8\u00039\u001c\u0000\u00e4\u00e7\u00039\u001c\u0000\u00e5\u00e7"+
 		"\u0003;\u001d\u0000\u00e6\u00e4\u0001\u0000\u0000\u0000\u00e6\u00e5\u0001"+
 		"\u0000\u0000\u0000\u00e7\u00ea\u0001\u0000\u0000\u0000\u00e8\u00e6\u0001"+

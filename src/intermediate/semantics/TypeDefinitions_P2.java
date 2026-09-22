@@ -235,6 +235,23 @@ public class TypeDefinitions_P2 extends Semantics_P2
         
         return ctx.typespec;
     }
+
+    Typespec_P2 setType(SetTypeContext ctx)
+    {
+        Typespec_P2 setTypespec = new Typespec_P2(SET);
+        SetElementTypeContext elementCtx = ctx.setElementType();
+        Typespec_P2 elementTypespec = (Typespec_P2) visit(elementCtx);
+
+        if (!elementTypespec.isOrdinal())
+        {
+            error.flag(INVALID_SET_BASE_TYPE, elementCtx);
+            elementTypespec = Predefined.integerType;
+        }
+
+        setTypespec.setSetElementType(elementTypespec);
+        ctx.typespec = setTypespec;
+        return setTypespec;
+    }
     
     private int elementCount(Typespec_P2 typespec)
     {

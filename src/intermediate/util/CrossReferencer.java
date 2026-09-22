@@ -228,6 +228,18 @@ public class CrossReferencer
 
                 break;
             }
+
+            case SET:
+            {
+                Typespec_P2 elementType = typespec.getSetElementType();
+                System.out.println(INDENT + "--- BASE TYPE ---");
+                printTypespec(elementType);
+                if (elementType.getIdentifier() == null)
+                {
+                    printTypespecDetail(elementType);
+                }
+                break;
+            }
             
             default: break;
         }

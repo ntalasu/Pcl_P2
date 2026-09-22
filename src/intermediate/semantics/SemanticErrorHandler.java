@@ -14,6 +14,7 @@ public class SemanticErrorHandler
         INVALID_SUBRANGE           ("Invalid subrange"),
         INVALID_SUBRANGE_CONSTANT  ("Invalid subrange constant"),
         INVALID_INDEX_TYPE         ("Index type must be ordinal"),
+        INVALID_SET_BASE_TYPE      ("Set base type must be ordinal"),
         INVALID_PACKED_ARRAY       ("Can only pack arrays of char"),
         ;
         

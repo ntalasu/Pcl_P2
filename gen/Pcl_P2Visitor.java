@@ -1,4 +1,4 @@
-// Generated from Pcl_P2.g4 by ANTLR 4.13.2
+// Generated from /Users/talasu/Downloads/Pcl_P2/Pcl_P2.g4 by ANTLR 4.13.2
 
     package intermediate.antlr4;
     
@@ -172,6 +172,12 @@ public interface Pcl_P2Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStructuredType(Pcl_P2Parser.StructuredTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Pcl_P2Parser#setType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSetType(Pcl_P2Parser.SetTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Pcl_P2Parser#enumeratedType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -213,18 +219,6 @@ public interface Pcl_P2Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRecordType(Pcl_P2Parser.RecordTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Pcl_P2Parser#setType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSetType(Pcl_P2Parser.SetTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Pcl_P2Parser#setElementType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSetElementType(Pcl_P2Parser.SetElementTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Pcl_P2Parser#variablesPart}.
 	 * @param ctx the parse tree

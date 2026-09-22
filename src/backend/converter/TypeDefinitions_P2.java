@@ -33,8 +33,55 @@ public class TypeDefinitions_P2 extends Converter_P2
             
             visit(typespecCtx);
         }
+        else if (form == SET)
+        {
+            String typeName = typeIdCtx.entry.getName();
+            if (first)
+            {
+                code.emitLine();
+                first = false;
+            }
+
+            code.emitLine("private static class " + typeName
+                          + " extends HashSet<"
+                          + javaElementTypeName(typespec.getSetElementType())
+                          + "> {}");
+        }
         
         return null;
+    }
+
+    private String javaElementTypeName(Typespec_P2 typespec)
+    {
+        if (typespec.getForm() == SUBRANGE)
+        {
+            typespec = typespec.baseType();
+        }
+
+        if (typespec.getIdentifier() != null)
+        {
+            String typeName = typespec.getIdentifier().getName();
+            String javaName = typeNameTable.get(typeName);
+            if (javaName != null)
+            {
+                return boxed(javaName);
+            }
+            return typeName;
+        }
+
+        return "Integer";
+    }
+
+    private String boxed(String typeName)
+    {
+        switch (typeName)
+        {
+            case "int": return "Integer";
+            case "double": return "Double";
+            case "boolean": return "Boolean";
+            case "char": return "Character";
+            default: return typeName;
+        }
     }
     
     Object enumeratedType(EnumeratedTypeContext ctx)

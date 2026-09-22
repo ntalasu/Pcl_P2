@@ -119,8 +119,34 @@ public class VariableDeclarations_P2 extends Converter_P2
                 {
                     return "int";
                 }
+
+            case SET:
+                return "HashSet<" + javaElementTypeName(pascalType.getSetElementType()) + ">";
                 
             default: return "*unknown*";
         }
+    }
+
+    private String javaElementTypeName(Typespec_P2 typespec)
+    {
+        if (typespec.getForm() == SUBRANGE)
+        {
+            typespec = typespec.baseType();
+        }
+
+        if (typespec.getIdentifier() != null)
+        {
+            String typeName = typespec.getIdentifier().getName();
+            switch (typeName)
+            {
+                case "integer": return "Integer";
+                case "real": return "Double";
+                case "boolean": return "Boolean";
+                case "char": return "Character";
+                default: return typeName;
+            }
+        }
+
+        return "Integer";
     }
 }
