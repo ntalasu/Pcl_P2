@@ -122,8 +122,12 @@ public class VariableDeclarations_P2 extends Converter_P2
 
             case SET:
                 return "HashSet<" + javaElementTypeName(pascalType.getSetElementType()) + ">";
+
+            case HASHTABLE:
+                return javaHashtableTypeName(pascalType);
                 
             default: return "*unknown*";
+
         }
     }
 
@@ -143,10 +147,33 @@ public class VariableDeclarations_P2 extends Converter_P2
                 case "real": return "Double";
                 case "boolean": return "Boolean";
                 case "char": return "Character";
+                case "string": return "String";
                 default: return typeName;
             }
         }
 
         return "Integer";
     }
+
+    private String javaHashtableTypeName(Typespec_P2 typespec)
+    {
+        if (typespec.getForm() == HASHTABLE)
+        {
+            return "HashMap<"
+                    + javaHashtableTypeName(typespec.getHashtableKeyType())
+                    + ", "
+                    + javaHashtableTypeName(typespec.getHashtableElementType())
+                    + ">";
+        }
+        else if (typespec.getForm() == SET)
+        {
+            return "HashSet<"
+                    + javaElementTypeName(typespec.getSetElementType()) + ">";
+        }
+        else
+        {
+            return javaElementTypeName(typespec);
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-// Generated from Pcl_P2.g4 by ANTLR 4.13.2
+// Generated from /Users/kathleenwirjadi/Downloads/Pcl_P2/Pcl_P2.g4 by ANTLR 4.13.2
 
     package intermediate.antlr4;
     
@@ -225,6 +225,18 @@ public interface Pcl_P2Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSetElementType(Pcl_P2Parser.SetElementTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Pcl_P2Parser#hashtableType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHashtableType(Pcl_P2Parser.HashtableTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Pcl_P2Parser#hashtableKeyType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHashtableKeyType(Pcl_P2Parser.HashtableKeyTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Pcl_P2Parser#variablesPart}.
 	 * @param ctx the parse tree

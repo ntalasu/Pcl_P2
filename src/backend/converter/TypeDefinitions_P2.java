@@ -47,8 +47,43 @@ public class TypeDefinitions_P2 extends Converter_P2
                           + javaElementTypeName(typespec.getSetElementType())
                           + "> {}");
         }
+
+        else if (form == HASHTABLE)
+        {
+            String typeName = typeIdCtx.entry.getName();
+            if (first)
+            {
+                code.emitLine();
+                first = false;
+            }
+
+            code.emitLine("private static class " + typeName
+                    + " extends " + javaHashtableTypeName(typespec)
+                    + " {}");
+        }
         
         return null;
+    }
+
+    private String javaHashtableTypeName(Typespec_P2 typespec)
+    {
+        if (typespec.getForm() == HASHTABLE)
+        {
+            return "HashMap<"
+                    + javaHashtableTypeName(typespec.getHashtableKeyType())
+                    + ", "
+                    + javaHashtableTypeName(typespec.getHashtableElementType())
+                    + ">";
+        }
+        else if (typespec.getForm() == SET)
+        {
+            return "HashSet<"
+                    + javaElementTypeName(typespec.getSetElementType()) + ">";
+        }
+        else
+        {
+            return javaElementTypeName(typespec);
+        }
     }
 
     private String javaElementTypeName(Typespec_P2 typespec)

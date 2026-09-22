@@ -252,6 +252,31 @@ public class TypeDefinitions_P2 extends Semantics_P2
         ctx.typespec = setTypespec;
         return setTypespec;
     }
+
+    Typespec_P2 hashtableType(HashtableTypeContext ctx)
+    {
+        Typespec_P2 hashtableTypespec = new Typespec_P2(HASHTABLE);
+
+        HashtableKeyTypeContext keyCtx = ctx.hashtableKeyType();
+        Typespec_P2 keyTypespec = (Typespec_P2) visit(keyCtx);
+
+        if (!(keyTypespec.isOrdinal() || keyTypespec.getForm() == STRING))
+        {
+            error.flag(INVALID_KEY_TYPE, keyCtx);
+            keyTypespec = Predefined.integerType;
+        }
+
+        // No restriction on element type -- can be anything, including
+        // another hashtable (elmtType recurses through typeSpecification).
+        ElmtTypeContext elmtTypeCtx = ctx.elmtType();
+        Typespec_P2 elmtTypespec = (Typespec_P2) visit(elmtTypeCtx);
+
+        hashtableTypespec.setHashtableKeyType(keyTypespec);
+        hashtableTypespec.setHashtableElementType(elmtTypespec);
+
+        ctx.typespec = hashtableTypespec;
+        return hashtableTypespec;
+    }
     
     private int elementCount(Typespec_P2 typespec)
     {

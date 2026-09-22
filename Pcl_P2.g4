@@ -98,6 +98,7 @@ structuredType        locals [ Typespec_P2 typespec = null ]
     : arrayType 
     | recordType
     | setType
+    | hashtableType
     ;
 
 enumeratedType        locals [ Typespec_P2 typespec = null ] 
@@ -121,6 +122,11 @@ setType     locals [ Typespec_P2 typespec = null ]
 
 setElementType : typeIdentifier | ordinalType ;
 
+hashtableType   locals [ Typespec_P2 typespec = null ]
+    : HASHTABLE '[' hashtableKeyType ']' OF elmtType ;
+
+hashtableKeyType : typeIdentifier | ordinalType ;
+
 variablesPart            : VAR variableDeclarationsList ;
 variableDeclarationsList : variableDeclarations 
                                         ( ';' variableDeclarations )* ;
@@ -138,6 +144,7 @@ ARRAY     : A R R A Y ;
 OF        : O F ;
 RECORD    : R E C O R D ;
 SET       : S E T ;
+HASHTABLE : H A S H T A B L E ;
 VAR       : V A R ;
 BEGIN     : B E G I N ;
 END       : E N D ;
