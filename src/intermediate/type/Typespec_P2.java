@@ -9,7 +9,7 @@ public class Typespec_P2
 {
     public enum Form
     {
-        SCALAR, ENUMERATED, SUBRANGE, STRING, ARRAY, RECORD, SET, UNKNOWN;
+        SCALAR, ENUMERATED, SUBRANGE, STRING, ARRAY, RECORD, SET, HASHTABLE, UNKNOWN;
 
         public String toString() { return super.toString().toLowerCase(); }
     }
@@ -37,6 +37,12 @@ public class Typespec_P2
 
     private class SetInfo implements TypeInfo
     {
+        private Typespec_P2 elementType;
+    }
+
+    private class HashtableInfo implements TypeInfo
+    {
+        private Typespec_P2 keyType;
         private Typespec_P2 elementType;
     }
     
@@ -74,6 +80,12 @@ public class Typespec_P2
             case SET:
                 info = new SetInfo();
                 ((SetInfo) info).elementType = null;
+                break;
+
+            case HASHTABLE:
+                info = new HashtableInfo();
+                ((HashtableInfo) info).keyType = null;
+                ((HashtableInfo) info).elementType = null;
                 break;
                 
             default: break;
@@ -196,4 +208,25 @@ public class Typespec_P2
     {
         ((SetInfo) info).elementType = elementType;
     }
+
+    public Typespec_P2 getHashtableKeyType()
+    {
+        return ((HashtableInfo) info).keyType;
+    }
+
+    public void setHashtableKeyType(Typespec_P2 keyType)
+    {
+        ((HashtableInfo) info).keyType = keyType;
+    }
+
+    public Typespec_P2 getHashtableElementType()
+    {
+        return ((HashtableInfo) info).elementType;
+    }
+
+    public void setHashtableElementType(Typespec_P2 elementType)
+    {
+        ((HashtableInfo) info).elementType = elementType;
+    }
+
 }

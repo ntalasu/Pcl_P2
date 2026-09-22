@@ -138,6 +138,9 @@ public class Semantics_P2 extends Pcl_P2BaseVisitor<Object>
         return typeDefinitions.setType(ctx);
     }
 
+    @Override
+    public Object visitHashtableType(HashtableTypeContext ctx) { return typeDefinitions.hashtableType(ctx);}
+
     @Override 
     public Object visitVariableDeclarations(
                                 VariableDeclarationsContext ctx) 
