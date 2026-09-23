@@ -6,16 +6,16 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="antlr-4.13.2-complete" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../antlr-4.13.2-complete.jar!/" />
+          <root url="jar:///opt/homebrew/Cellar/antlr/4.13.2/antlr-4.13.2-complete.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="antlr-4.13.2-complete" level="project" />
   </component>
 </module>
