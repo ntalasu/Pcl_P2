@@ -260,7 +260,7 @@ public class TypeDefinitions_P2 extends Semantics_P2
         HashtableKeyTypeContext keyCtx = ctx.hashtableKeyType();
         Typespec_P2 keyTypespec = (Typespec_P2) visit(keyCtx);
 
-        if (!(keyTypespec.isOrdinal() || keyTypespec.getForm() == STRING))
+        if (!keyTypespec.isOrdinal())
         {
             error.flag(INVALID_KEY_TYPE, keyCtx);
             keyTypespec = Predefined.integerType;
